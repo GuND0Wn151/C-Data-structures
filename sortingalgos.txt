@@ -1,0 +1,45 @@
+##########################################################
+--------------------------bubble sort---------------------
+count =size of array
+
+for(i=count-2;i>=0;i--){
+      for(j=0;j<=i;j++){
+        if(number[j]>number[j+1]){
+           temp=number[j];
+           number[j]=number[j+1];
+           number[j+1]=temp;
+        }
+      }
+   }
+
+###########################################################
+--------------------insertion sort----------------------
+  for(i=1;i<count;i++){
+      temp=number[i];
+      j=i-1;
+      while((temp<number[j])&&(j>=0)){ //important part 
+         number[j+1]=number[j];
+         j=j-1;
+      }
+      number[j+1]=temp;
+   }
+
+#############################################################
+--------------------------selection sort---------------------
+void selectionSort(int arr[], int n) 
+{ 
+    int i, j, min_idx; 
+  
+    // One by one move boundary of unsorted subarray 
+    for (i = 0; i < n-1; i++) 
+    { 
+        // Find the minimum element in unsorted array 
+        min_idx = i; 
+        for (j = i+1; j < n; j++) 
+          if (arr[j] < arr[min_idx]) 
+            min_idx = j; 
+  
+        // Swap the found minimum element with the first element 
+        swap(&arr[min_idx], &arr[i]); 
+    } 
+} 
